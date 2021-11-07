@@ -15,7 +15,7 @@ const grpcOptions = {
 const protoFile = "test.proto";
 
 export const config = {
-  unstable_includeFiles: ['test.proto'],
+  unstable_includeFiles: ['test.proto', "test.json"],
 };
 
 export default function handler(req, res) {

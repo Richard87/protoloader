@@ -10,6 +10,10 @@ const grpcOptions = {
   oneofs: true
 };
 
+export const config = {
+  unstable_includeFiles: ['test.proto'],
+};
+
 export default function handler(req, res) {
   const packageDefinition = protoLoader.loadSync("test.proto", grpcOptions);
   const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);

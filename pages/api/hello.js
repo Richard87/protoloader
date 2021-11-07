@@ -21,5 +21,5 @@ export const config = {
 export default function handler(req, res) {
   const packageDefinition = protoLoader.loadSync( protoFile, grpcOptions);
   const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
-  res.status(200).json(test)
+  res.status(200).json(packageObject)
 }

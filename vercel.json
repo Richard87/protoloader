@@ -1,9 +1,9 @@
 {
   "functions": {
-    "pages/api/json.js": {
+    "api/json.js": {
       "includeFiles": "test.json"
     },
-    "pages/api/grpc.js": {
+    "api/grpc.js": {
       "includeFiles": "test.proto"
     }
   }

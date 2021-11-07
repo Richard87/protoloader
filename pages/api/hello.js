@@ -2,7 +2,6 @@
 import * as fs from "fs";
 
 const protoLoader = require('@grpc/proto-loader');
-const grpcLibrary = require('@grpc/grpc-js');
 
 const grpcOptions = {
   keepCase: true,
@@ -20,6 +19,5 @@ export const config = {
 
 export default function handler(req, res) {
   const packageDefinition = protoLoader.loadSync( protoFile, grpcOptions);
-  const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
-  res.status(200).json(packageObject)
+  res.status(200).json(packageDefinition)
 }

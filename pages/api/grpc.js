@@ -1,6 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import * as fs from "fs";
-
 const protoLoader = require('@grpc/proto-loader');
 
 const grpcOptions = {
@@ -14,7 +11,7 @@ const grpcOptions = {
 const protoFile = "test.proto";
 
 export const config = {
-  unstable_includeFiles: [protoFile],
+  unstable_includeFiles: ['test.proto'],
 };
 
 export default function handler(req, res) {

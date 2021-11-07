@@ -15,12 +15,11 @@ const grpcOptions = {
 const protoFile = "test.proto";
 
 export const config = {
-  unstable_includeFiles: ['test.proto', "test.json"],
+  unstable_includeFiles: ['test.proto'],
 };
 
 export default function handler(req, res) {
-  // const packageDefinition = protoLoader.loadSync( protoFile, grpcOptions);
-  // const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
-  const test = fs.readFileSync("test.json")
+  const packageDefinition = protoLoader.loadSync( protoFile, grpcOptions);
+  const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
   res.status(200).json(test)
 }

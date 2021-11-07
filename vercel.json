@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "pages/api/json.js": {
+      "includeFiles": "test.json"
+    },
+    "pages/api/grpc.js": {
+      "includeFiles": "test.proto"
+    }
+  }
+}

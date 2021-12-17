@@ -1,10 +1,9 @@
 import fs from "fs"
+import path from "path"
 
-export const config = {
-  unstable_includeFiles: ['test.json'],
-};
+const jsonFile = path.join(process.cwd(), "test.json");
 
 export default function handler(req, res) {
-  const content = fs.readFileSync( "test.json");
+  const content = fs.readFileSync(jsonFile);
   res.status(200).json(content)
 }

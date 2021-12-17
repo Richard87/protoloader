@@ -1,3 +1,4 @@
+import path from 'path';
 const protoLoader = require('@grpc/proto-loader');
 
 const grpcOptions = {
@@ -8,13 +9,9 @@ const grpcOptions = {
   oneofs: true
 };
 
-const protoFile = "test.proto";
-
-export const config = {
-  unstable_includeFiles: ['test.proto'],
-};
+const protoFile = path.join(process.cwd(), "test.proto");
 
 export default function handler(req, res) {
-  const packageDefinition = protoLoader.loadSync( protoFile, grpcOptions);
+  const packageDefinition = protoLoader.loadSync(protoFile, grpcOptions);
   res.status(200).json(packageDefinition)
 }
